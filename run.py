@@ -20,14 +20,21 @@ def get_sales_data():
     """
     Gets sales figures
     """
-    print("enter sales data")
-    print("dtat should be 6 muns")
-    print("eg: 23, 23, 23, 23\n")
+    while True:
+        print("enter sales data")
+        print("dtat should be 6 muns")
+        print("eg: 23, 23, 23, 23\n")
 
-    data_str = input("enter sales figures here")
+        data_str = input("enter sales figures here")
     
-    sales_data = data_str.split(",")
-    validate_data(sales_data)
+        sales_data = data_str.split(",")
+        
+
+        if validate_data(sales_data):
+            print("data is valid")
+            break
+
+    return sales_data
 
 
 def validate_data(values):
@@ -40,5 +47,8 @@ def validate_data(values):
             )
     except ValueError as e:
         print(f"Invalid Data: {e}, please try again.\n")
+        return False
 
-get_sales_data()
+    return True
+
+data = get_sales_data()
