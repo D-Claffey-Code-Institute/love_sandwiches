@@ -61,6 +61,15 @@ def update_sales_worksheet(data):
     sales_worksheet.append_row(data)
     print("sales worksheet updated \n")
 
-data = get_sales_data()
-sales_data = [int(num) for num in data]
-update_sales_worksheet(data)
+def calculate_surplus_data(sales_row):
+    print("caculating surplus\n")
+    stock = SHEET.worksheet("stock").get_all_values
+    
+
+def main():
+    data = get_sales_data()
+    sales_data = [int(num) for num in data]
+    update_sales_worksheet(data)
+
+print("welcome to love sandwiches\n")
+main()
